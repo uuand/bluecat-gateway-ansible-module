@@ -223,7 +223,7 @@ class Gateway(object):
 
         # Populate query_params with any matches in kwargs
         query_params = self.parse_query_params(definition)
-
+        
         # Populate path_params with any matches in kwargs
         resources = OrderedDict()
         for resource in self.resource_path:
@@ -243,7 +243,7 @@ class Gateway(object):
             for path in list(processed_path_params):
                 if not path.strip('/').endswith('}'):
                     del processed_path_params[path]
-
+        
         if len(processed_path_params.keys()) > 1:
             raise Exception('Provided path parameters match multiple paths!')
 
@@ -317,7 +317,7 @@ class Gateway(object):
         :return: Dictionary containing the matching paths and the corresponding parameters as values.
         """
         processed_path_params = {}
-
+        
         for path, parameters in definition['path_parameters'].items():
             # Make sure parameters user gave match parameters accepted by path
             if set(parameters.keys()) != set(resources.keys()):
@@ -411,7 +411,7 @@ def run_module():
         if response.status_code in [201, 204] and not module.check_mode:
             result['changed'] = True
         result['status'] = response.status_code
-        result['json'] = str(response.content)
+        result['json'] = response.json()
         if response.status_code >= 400:
             result['msg'] = 'Bad Status Code'
             module.fail_json(**result)

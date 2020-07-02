@@ -1,0 +1,90 @@
+---
+- name: Test BC GW API via Ansible
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: present DNS Zone
+      bluecat_dnszone:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "zones"
+        full_zone: "bluecat4.metro-cc.com"
+        view: "internal"
+        configuration: "DE-MCC"
+        deployable: true
+        state: present
+      register: result
+      delegate_to: localhost
+
+    - name: debug present Zone
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: Unchanged present DNS Zone
+      bluecat_dnszone:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "zones"
+        full_zone: "bluecat4.metro-cc.com"
+        view: "internal"
+        configuration: "DE-MCC"
+        deployable: true
+        state: present
+      register: result
+      delegate_to: localhost
+
+    - name: debug unchanged Zone
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: Absent DNS Zone
+      bluecat_dnszone:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "zones"
+        full_zone: "bluecat4.metro-cc.com"
+        view: "internal"
+        configuration: "DE-MCC"
+        deployable: true
+        state: absent
+      register: result
+      delegate_to: localhost
+
+    - name: debug Absent Zone
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: Unchanged Absent DNS Zone
+      bluecat_dnszone:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "zones"
+        full_zone: "bluecat4.metro-cc.com"
+        view: "internal"
+        configuration: "DE-MCC"
+        deployable: true
+        state: absent
+      register: result
+      delegate_to: localhost
+
+    - name: debug unchanged Absent Zone
+      debug:
+        var: result
+      when: debug_bc

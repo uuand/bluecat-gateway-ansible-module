@@ -1,59 +1,121 @@
-![alt text](bluecat_certified.png "bluecat_certified")
 
-## BlueCat Gateway Module and Playbooks for Ansible
+# BlueCat Ansible Tests and Examples
 
-## Dependencies
+## Original bluecat.py
 
-* Requires BlueCat Gateway v18.10.1 or greater
+requires a change in the bluecat.py to allow parsing the json data returned (original code returns byte)
 
-* You must install the Python "requests" module.
+the code is not idempotent, because it asks for a given action (get, getall, post, patch, delete) and will return an error, if a object already exists.
 
+```bash
+ANSIBLE_CONFIG=ansible.cfg ansible-playbook play-bluecat.yml --limit="api.bluecat.metro-cc.com"
 ```
-pip install requests
+
+
+## Sample Module (DNSzone)
+
+This Module was created to figure out if the bluecat.py & BlueCat Gateway can be used in a more Ansible like way.
+Unfortunally the bluecat.py has no setup.py, so it had to be "installed" manually.
+
+e.g.: in a virtualenv /venvbc/
+```bash
+mkdir /venvbc/lib/python3.6/site-packages/bluecat
+cp bluecat.py /venvbc/lib/python3.6/site-packages/bluecat
+touch /venvbc/lib/python3.6/site-packages/bluecat/__init__.py
 ```
 
-## Using the module
+Running the Module
 
-#### Attention: __You _must_ be familiar with Ansible in order to use the module and playbooks.__
+```bash
+ANSIBLE_CONFIG=ansible.cfg ansible-playbook play-bluecat_dnszone.yml --limit="api.bluecat.metro-cc.com"
+```
 
-To obtain the BlueCat Ansible module and playbooks, pull or clone this repository.
-* `bluecat.py` is the Ansible module
-* playbooks are in the Examples folder in YAML format
+Gives this Output (with inventories/group_vars/all.yml -> debug_bc: true)
+!!Return keys/values in error cases are not yet properly filled!!
 
-The first time you run the BlueCat Gateway Module for Ansible, it will download the `gateway_api.json` file from your BlueCat Gateway instance into the same folder where the Ansible playbook was executed.
-The module reads from the `gateway_api.json` file to determine what REST API requests your BlueCat Gateway instance supports.
-If you upgrade your BlueCat Gateway image or want to connect to a different BlueCat Gateway instance, delete the `gateway_api.json` file in the same folder as the Ansible playbook.
+```python
+PLAY [Test BC GW API via Ansible] ****************************************************************************************************************************************
 
-BlueCat recommends that you should not often change variables in `external_vars.yml.` The variables should be set once, and then used with multiple playbooks.
+TASK [present DNS Zone] **************************************************************************************************************************************************
+changed: [api.bluecat.metro-cc.com]
 
-To allow the Ansible playbook to consume the REST APIs within a workflow to call BlueCat Gateway and BlueCat Address Manager (BAM), you must import the REST API workflow into your BlueCat Gateway instance. You must manually download the REST API workflow from GitHub (https://github.com/bluecatlabs/gateway-workflows/tree/master/Community) and import it into your Gateway instance through the export/import workflow. Once the REST API workflow is imported, you must set permissions for it using Workflow Permissions, and then you can begin using the workflows.
-To view the swagger docs for the REST API go to `<BlueCatGatewayFQDN>/api/v1/`.
+TASK [debug present Zone] ************************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com] => {
+    "result": {
+        "changed": true,
+        "configuration": "DE-MCC",
+        "deployable": true,
+        "failed": false,
+        "full_zone": "bluecat4.metro-cc.com",
+        "id": 101405,
+        "msg": "",
+        "original_message": {
+            "id": 101405,
+            "name": "bluecat4",
+            "properties": "deployable=true|absoluteName=bluecat4.metro-cc.com|",
+            "type": "Zone"
+        },
+        "status": 201,
+        "view": "internal"
+    }
+}
 
-## Adhering to standards
-When contributing to the BlueCat Gateway Ansible Module, ensure that your code:
-- Follows the PEP8 standard
-- Uses meaningful variable and function names
+TASK [Unchanged present DNS Zone] ****************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com]
 
-## Contributing
+TASK [debug unchanged Zone] **********************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com] => {
+    "result": {
+        "changed": false,
+        "configuration": "DE-MCC",
+        "deployable": true,
+        "failed": false,
+        "full_zone": "bluecat4.metro-cc.com",
+        "id": 101405,
+        "msg": "",
+        "original_message": {
+            "id": 101405,
+            "name": "bluecat4",
+            "properties": "deployable=true|absoluteName=bluecat4.metro-cc.com|",
+            "type": "Zone"
+        },
+        "status": 200,
+        "view": "internal"
+    }
+}
 
-1. Fork it!
-2. Create your feature branch. `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request.
+TASK [Absent DNS Zone] ***************************************************************************************************************************************************
+changed: [api.bluecat.metro-cc.com]
 
-## License
+TASK [debug Absent Zone] *************************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com] => {
+    "result": {
+        "changed": true,
+        "configuration": "DE-MCC",
+        "failed": false,
+        "msg": "",
+        "original_message": {
+            "msg": "Object Deleted"
+        },
+        "status": 204,
+        "view": "internal"
+    }
+}
 
-Copyright 2018 BlueCat Networks, Inc.
+TASK [Unchanged Absent DNS Zone] *****************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com]
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+TASK [debug unchanged Absent Zone] ***************************************************************************************************************************************
+ok: [api.bluecat.metro-cc.com] => {
+    "result": {
+        "changed": false,
+        "failed": false,
+        "msg": "Bad Status Code",
+        "original_message": "No matching Zone(s) found",
+        "status": 404
+    }
+}
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+PLAY RECAP ***************************************************************************************************************************************************************
+api.bluecat.metro-cc.com   : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```

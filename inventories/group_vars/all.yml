@@ -1,0 +1,6 @@
+username: bcgwuser
+password: bcgwpass
+protocol: http
+domain: 10.10.10.10
+version: 1
+debug_bc: true

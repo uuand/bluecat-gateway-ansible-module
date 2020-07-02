@@ -1,0 +1,154 @@
+---
+- name: Test BC GW API via Ansible
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+    # - name: Get all Configurations
+    #   bluecat:
+    #     username: "{{ username }}"
+    #     password: "{{ password }}"
+    #     protocol: "{{ protocol }}"
+    #     domain: "{{ domain }}"
+    #     version: "{{ version }}"
+    #     resource: configurations 
+    #     action: getall
+    #   register: result
+    #   delegate_to: localhost
+
+    # - name: debug all Configurations
+    #   debug:
+    #     var: result
+
+    # - name: debug first Configurations
+    #   debug:
+    #     var: result.json[0].name
+
+    # - name: debug second Configurations
+    #   debug:
+    #     var: result.json[1].name
+
+    # #http://10.16.195.136/api/v1/configurations/DE-MCC/views/internal/zones/com/zones/metro-cc/zones/
+    - name: get one Zone
+      bluecat:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        protocol: "{{ protocol }}"
+        domain: "{{ domain }}"
+        version: "{{ version }}"
+        resource: zones 
+        action: get
+        resource_path:
+          - configuration: "DE-MCC"
+          - view: "external"
+          - zone: "bluecat.metro-cc.com"
+      register: result
+      delegate_to: localhost
+
+    - name: debug one Zone
+      debug:
+        var: result
+
+#     - name: create one Zone
+#       bluecat:
+#         username: "{{ username }}"
+#         password: "{{ password }}"
+#         protocol: "{{ protocol }}"
+#         domain: "{{ domain }}"
+#         version: "{{ version }}"
+#         resource: zones 
+#         action: post
+#         json_data:
+#           name: "bluecat2.metro-cc.com"
+#           properties: "deployable=true|"
+#         resource_path:
+#           - configuration: "DE-MCC"
+#           - view: "internal"
+#           - zone: "metro-cc.com"
+#       register: result
+#       delegate_to: localhost
+
+#     - name: debug one Zone
+#       debug:
+#         var: result
+
+#     - name: delete one Zone
+#       bluecat:
+#         username: "{{ username }}"
+#         password: "{{ password }}"
+#         protocol: "{{ protocol }}"
+#         domain: "{{ domain }}"
+#         version: "{{ version }}"
+#         resource: zones 
+#         action: delete
+#         resource_path:
+#           - configuration: "DE-MCC"
+#           - view: "internal"
+#           - zone: "bluecat2.metro-cc.com"
+#       register: result
+#       delegate_to: localhost
+
+#     - name: debug one Zone
+#       debug:
+#         var: result
+# #http://10.16.195.136/api/v1/configurations/DE-MCC/views/internal/zones/com/zones/metro-cc/zones/bluecat/server/storenode1.bluecat.metro-cc.com/deployment_roles/
+# # action: get fails with path error, getall works (as per documentation get may not work and getall should be used)
+#     - name: get deployment Roles for one Zone
+#       bluecat:
+#         username: "{{ username }}"
+#         password: "{{ password }}"
+#         protocol: "{{ protocol }}"
+#         domain: "{{ domain }}"
+#         version: "{{ version }}"
+#         resource: deployment_roles 
+#         action: getall
+#         resource_path:
+#           - configuration: "DE-MCC"
+#           - view: "internal"
+#           - zone: "bluecat.metro-cc.com"
+#           - server_fqdn: "storenode1.bluecat.metro-cc.com"
+#       register: result
+#       delegate_to: localhost
+
+#     - name: debug deployment Roles for one Zone
+#       debug:
+#         var: result
+
+#     - name: Create new Configurations
+#       bluecat:
+#         username: "{{ username }}"
+#         password: "{{ password }}"
+#         protocol: "{{ protocol }}"
+#         domain: "{{ domain }}"
+#         version: "{{ version }}"
+#         resource: configurations 
+#         action: post
+#         json_data:
+#           name: "DE-Campus"
+#           properties: "description=METRO CAMPUS|configurationGroup=DE|"
+#       register: result
+#       delegate_to: localhost
+
+#     - name: debug result
+#       debug:
+#         var: result
+#/api/v1/configurations/DE-Campus/
+
+    # - name: delete new Configurations
+    #   bluecat:
+    #     username: "{{ username }}"
+    #     password: "{{ password }}"
+    #     protocol: "{{ protocol }}"
+    #     domain: "{{ domain }}"
+    #     version: "{{ version }}"
+    #     resource: configurations 
+    #     action: post
+    #     resource_path:
+    #       - configuration: "DE-Campus"
+    #   register: result
+    #   delegate_to: localhost
+
+    # - name: debug result
+    #   debug:
+    #     var: result

@@ -1,0 +1,94 @@
+---
+- name: Test BC GW API via Ansible
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: present Server
+      bluecat_server:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "servers"
+        fqdn: "storenode3.bluecat.metro-cc.com"
+        friendly_name: "storenode3.bluecat.metro-cc.com"
+        interface_address: "10.192.5.150"
+        profile: "ADONIS_XMB2"
+        configuration: "DE-MCC"
+        state: present
+      register: result
+      delegate_to: localhost
+
+    - name: debug present Server
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: Unchanged present Server
+      bluecat_server:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "servers"
+        fqdn: "storenode3.bluecat.metro-cc.com"
+        friendly_name: "storenode3.bluecat.metro-cc.com"
+        interface_address: "10.192.5.150"
+        profile: "ADONIS_XMB2"
+        configuration: "DE-MCC"
+        state: present
+      register: result
+      delegate_to: localhost
+
+    - name: debug unchanged Server
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: absent Server
+      bluecat_server:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "servers"
+        fqdn: "storenode3.bluecat.metro-cc.com"
+        friendly_name: "storenode3.bluecat.metro-cc.com"
+        interface_address: "10.192.5.150"
+        profile: "ADONIS_XMB2"
+        configuration: "DE-MCC"
+        state: absent
+      register: result
+      delegate_to: localhost
+
+    - name: debug absent Server
+      debug:
+        var: result
+      when: debug_bc
+
+    - name: Unchanged absend Server
+      bluecat_server:
+        gw_username: "{{ username }}"
+        gw_password: "{{ password }}"
+        gw_protocol: "{{ protocol }}"
+        gw_host: "{{ domain }}"
+        gw_apiversion: "{{ version }}"
+        resource: "servers"
+        fqdn: "storenode3.bluecat.metro-cc.com"
+        friendly_name: "storenode3.bluecat.metro-cc.com"
+        interface_address: "10.192.5.150"
+        profile: "ADONIS_XMB2"
+        configuration: "DE-MCC"
+        state: absent
+      register: result
+      delegate_to: localhost
+
+    - name: debug unchanged absent Server
+      debug:
+        var: result
+      when: debug_bc

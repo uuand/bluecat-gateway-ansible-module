@@ -1,0 +1,5059 @@
+{
+  "resources": {
+    "cname_records": {
+      "parameters": {
+        "paths": [
+          "/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/",
+          "/zones/{zone}/cname_records/"
+        ],
+        "path_parameters": {
+          "/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/cname_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "patch": {
+        "paths": [
+          "/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name of the alias record",
+            "name": "name",
+            "required": false
+          },
+          "linked_record": {
+            "type": "string",
+            "description": "The name of the record to which this alias will link",
+            "name": "linked_record",
+            "required": false
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The TTL of the CName record",
+            "name": "ttl",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the CName record",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/cname_records_patch"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/",
+          "/zones/{zone}/cname_records/"
+        ],
+        "path_parameters": {
+          "/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/cname_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/cname_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/",
+          "/zones/{zone}/cname_records/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/zones/{zone}/cname_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/cname_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "absolute_name": {
+            "type": "string",
+            "description": "The FQDN of the CName record",
+            "name": "absolute_name",
+            "required": true
+          },
+          "linked_record": {
+            "type": "string",
+            "description": "The name of the record to which this alias will link",
+            "name": "linked_record",
+            "required": true
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The TTL of the CName record",
+            "name": "ttl",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the CName record",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/cname_records"
+            }
+          }
+        }
+      }
+    },
+    "configurations": {
+      "parameters": {
+        "paths": [
+          "/configurations/",
+          "/configurations/{configuration}/"
+        ],
+        "path_parameters": {
+          "/configurations/": {},
+          "/configurations/{configuration}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/"
+        ],
+        "path_parameters": {
+          "/configurations/": {}
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name of the entity.",
+            "name": "name",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the entity in the following format:key=value|key=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/configurations"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/",
+          "/configurations/{configuration}/"
+        ],
+        "path_parameters": {
+          "/configurations/": {},
+          "/configurations/{configuration}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "deployment_options": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/deployment_options/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_options/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_options/",
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_blocks/{block}/deployment_options/",
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_networks/{network}/deployment_options/",
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/views/{view}/deployment_options/",
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/zones/{zone}/deployment_options/",
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/deployment_options/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/deployment_options/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/deployment_options/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/deployment_options/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/deployment_options/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_options/",
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_options/",
+          "/ipv4_blocks/{block}/deployment_options/",
+          "/ipv4_networks/{network}/deployment_options/",
+          "/views/{view}/deployment_options/",
+          "/zones/{zone}/deployment_options/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/deployment_options/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/deployment_options/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/deployment_options/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/deployment_options/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "Name of the Deployment Option",
+            "name": "name",
+            "required": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Comma separated values to assign to the Deployment Option",
+            "name": "value",
+            "required": true
+          },
+          "properties": {
+            "type": "string",
+            "description": "Additional properties for the Deployment Option",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/deployment_options"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/",
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/option_name/{option_name}/server/{server_id}/deployment_options/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "option_name": {
+              "name": "option_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_id": {
+              "name": "server_id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "device": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/device/",
+          "/configurations/{configuration}/device/{device_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/device/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/device/{device_name}/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "device_name": {
+              "name": "device_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/device/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/device/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/devices"
+            }
+          }
+        }
+      },
+      "patch": {
+        "paths": [
+          "/configurations/{configuration}/device/{device_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/device/{device_name}/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "device_name": {
+              "name": "device_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/devices"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/device/{device_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/device/{device_name}/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "device_name": {
+              "name": "device_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "type": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/devices/type/{device_type}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/devices/type/{device_type}/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "device_type": {
+              "name": "device_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/devices/type/{device_type}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/devices/type/{device_type}/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "device_type": {
+              "name": "device_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "ipv4_address": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/",
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "patch": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/",
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ip4_address_patch"
+            }
+          }
+        }
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/",
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "mac_address": {
+            "type": "string",
+            "description": "MAC Address value",
+            "name": "mac_address",
+            "required": false
+          },
+          "hostinfo": {
+            "type": "string",
+            "description": "A string containing host information for the address in the following format: hostname,viewId,reverseFlag,sameAsZoneFlag",
+            "name": "hostinfo",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "Desired IP4 address state: MAKE_STATIC / MAKE_RESERVED / MAKE_DHCP_RESERVED",
+            "name": "action",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the IP4 Address",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ipv4_address"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/",
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_address/{ipv4_address}/": {
+            "ipv4_address": {
+              "name": "ipv4_address",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "ipv4_blocks": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/",
+          "/ipv4_blocks/{block}/",
+          "/ipv4_blocks/{block}/ipv4_blocks/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/",
+          "/ipv4_blocks/",
+          "/ipv4_blocks/{block}/ipv4_blocks/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/": {},
+          "/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ipv4_block_post"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/",
+          "/ipv4_blocks/",
+          "/ipv4_blocks/{block}/",
+          "/ipv4_blocks/{block}/ipv4_blocks/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/": {},
+          "/ipv4_blocks/{block}/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/ipv4_blocks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "create_network": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/create_network/",
+          "/ipv4_blocks/{block}/create_network/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/create_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/create_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/create_network/",
+          "/ipv4_blocks/{block}/create_network/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/create_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/create_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "cidr": {
+            "type": "string",
+            "description": "The CIDR notation for the network",
+            "name": "cidr",
+            "required": true
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the IP4 Network",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/create_network"
+            }
+          }
+        }
+      }
+    },
+    "deployment_roles": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_blocks/{block}/deployment_roles/",
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_networks/{network}/deployment_roles/",
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/views/{view}/deployment_roles/",
+          "/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/zones/{zone}/deployment_roles/",
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/deployment_roles/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/deployment_roles/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/deployment_roles/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/deployment_roles/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_roles/",
+          "/ipv4_blocks/{block}/deployment_roles/",
+          "/ipv4_networks/{network}/deployment_roles/",
+          "/views/{view}/deployment_roles/",
+          "/zones/{zone}/deployment_roles/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/deployment_roles/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/deployment_roles/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/deployment_roles/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/deployment_roles/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "server_fqdn": {
+            "type": "string",
+            "description": "Name of the server interface the role will be assigned to",
+            "name": "server_fqdn",
+            "required": true
+          },
+          "role_type": {
+            "type": "string",
+            "description": "Type of Deployment Role to assign (dns or dhcp)",
+            "name": "role_type",
+            "required": true
+          },
+          "role": {
+            "type": "string",
+            "description": "Role to assign (master, slave, etc.",
+            "name": "role",
+            "required": true
+          },
+          "properties": {
+            "type": "string",
+            "description": "Properties of the Deployment Role",
+            "name": "properties",
+            "required": false
+          },
+          "secondary_fqdn": {
+            "type": "string",
+            "description": "Name of secondary server interface, if using DHCP Failover",
+            "name": "secondary_fqdn",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/deployment_roles"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/",
+          "/views/{view}/server/{server_fqdn}/deployment_roles/",
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/role_type/{role_type}/server/{server_fqdn}/deployment_roles/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "role_type": {
+              "name": "role_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/server/{server_fqdn}/deployment_roles/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/server/{server_fqdn}/deployment_roles/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "server_fqdn": {
+              "name": "server_fqdn",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "get_next_network": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/get_next_network/",
+          "/ipv4_blocks/{block}/get_next_network/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/get_next_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/get_next_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/get_next_network/",
+          "/ipv4_blocks/{block}/get_next_network/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/get_next_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/get_next_network/": {
+            "block": {
+              "name": "block",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ipv4_networks_post"
+            }
+          }
+        }
+      }
+    },
+    "ipv4_networks": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_networks/",
+          "/configurations/{configuration}/ipv4_networks/{network}/",
+          "/configurations/{configuration}/tag_group/{tag_group}/tags/{tag}/ipv4_networks/",
+          "/ipv4_blocks/{block}/ipv4_networks/",
+          "/ipv4_networks/{network}/",
+          "/tag_group/{tag_group}/tags/{tag}/ipv4_networks/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_networks/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/tag_group/{tag_group}/tags/{tag}/ipv4_networks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag_group": {
+              "name": "tag_group",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag": {
+              "name": "tag",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/ipv4_networks/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/tag_group/{tag_group}/tags/{tag}/ipv4_networks/": {
+            "tag_group": {
+              "name": "tag_group",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag": {
+              "name": "tag",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_networks/",
+          "/configurations/{configuration}/ipv4_networks/{network}/",
+          "/configurations/{configuration}/tag_group/{tag_group}/tags/{tag}/ipv4_networks/",
+          "/ipv4_blocks/{block}/ipv4_networks/",
+          "/ipv4_networks/{network}/",
+          "/tag_group/{tag_group}/tags/{tag}/ipv4_networks/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_blocks/{block}/ipv4_networks/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/tag_group/{tag_group}/tags/{tag}/ipv4_networks/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag_group": {
+              "name": "tag_group",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag": {
+              "name": "tag",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_blocks/{block}/ipv4_networks/": {
+            "block": {
+              "in": "path",
+              "description": "Recursive",
+              "name": "block",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/tag_group/{tag_group}/tags/{tag}/ipv4_networks/": {
+            "tag_group": {
+              "name": "tag_group",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "tag": {
+              "name": "tag",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "patch": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_networks/{network}/",
+          "/ipv4_networks/{network}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name associated with the IP4 Network.",
+            "name": "name",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the IP4 Network",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ipv4_networks_patch"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_networks/{network}/",
+          "/ipv4_networks/{network}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_networks/{network}/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "get_next_ip": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/",
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/",
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "mac_address": {
+            "type": "string",
+            "description": "MAC Address value",
+            "name": "mac_address",
+            "required": false
+          },
+          "hostinfo": {
+            "type": "string",
+            "description": "A string containing host information for the address in the following format: hostname,viewId,reverseFlag,sameAsZoneFlag",
+            "name": "hostinfo",
+            "required": false
+          },
+          "action": {
+            "type": "string",
+            "description": "Desired IP4 address state: MAKE_STATIC / MAKE_RESERVED / MAKE_DHCP_RESERVED",
+            "name": "action",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the IP4 Address",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/get_next_ip"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/",
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/ipv4_addresses/ipv4_networks/{network}/get_next_ip/": {
+            "network": {
+              "name": "network",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "servers": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/servers/",
+          "/configurations/{configuration}/servers/{server_name}/",
+          "/servers/{server_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/servers/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/servers/",
+          "/servers/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/servers/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/servers/": {}
+        },
+        "query_parameters": {
+          "fqdn": {
+            "type": "string",
+            "description": "The fqdn of the entity.",
+            "name": "fqdn",
+            "required": true
+          },
+          "friendly_name": {
+            "type": "string",
+            "description": "The friendly_name of the entity.",
+            "name": "friendly_name",
+            "required": true
+          },
+          "interface_address": {
+            "type": "string",
+            "description": "The fqdn of the entity.",
+            "name": "interface_address",
+            "required": true
+          },
+          "profile": {
+            "type": "string",
+            "description": "The Server Profile",
+            "name": "profile",
+            "required": true
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the entity in the following format:key=value|key=value|",
+            "name": "properties",
+            "required": true
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/servers_post"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/servers/",
+          "/configurations/{configuration}/servers/{server_name}/",
+          "/servers/",
+          "/servers/{server_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/servers/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/servers/": {},
+          "/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "patch": {
+        "paths": [
+          "/configurations/{configuration}/servers/{server_name}/",
+          "/servers/{server_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "replace": {
+            "type": "string",
+            "description": "Boolean value to determine if the server will be replaced",
+            "name": "replace",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "Properties for the server",
+            "name": "properties",
+            "required": true
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/servers_patch"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/servers/{server_name}/",
+          "/servers/{server_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/servers/{server_name}/": {
+            "server_name": {
+              "name": "server_name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "views": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/views/",
+          "/configurations/{configuration}/views/{view}/",
+          "/views/{view}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/": {
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/views/",
+          "/views/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/": {}
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name of the entity.",
+            "name": "name",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the entity in the following format:key=value|key=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/views"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/",
+          "/views/{view}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/": {
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/",
+          "/views/{view}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/views/{view}/": {
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "external_host_records": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/external_host_records/",
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/external_host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/external_host_records/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/external_host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "absolute_name": {
+            "type": "string",
+            "description": "The FQDN of the external host record",
+            "name": "absolute_name",
+            "required": true
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/external_host_records"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/external_host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "host_records": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/",
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/",
+          "/host_records/{absolute_name}/",
+          "/zones/{zone}/host_records/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/host_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/",
+          "/host_records/",
+          "/zones/{zone}/host_records/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/host_records/": {},
+          "/zones/{zone}/host_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {
+          "absolute_name": {
+            "type": "string",
+            "description": "The FQDN of the host record",
+            "name": "absolute_name",
+            "required": true
+          },
+          "ip4_address": {
+            "type": "string",
+            "description": "The IPv4 addresses associated with the host record",
+            "name": "ip4_address",
+            "required": false
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The TTL of the host record",
+            "name": "ttl",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the host record",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/host_records"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/",
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/",
+          "/host_records/",
+          "/host_records/{absolute_name}/",
+          "/zones/{zone}/host_records/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/host_records/": {
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/host_records/": {},
+          "/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/host_records/": {
+            "zone": {
+              "name": "zone",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "patch": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name of the host record",
+            "name": "name",
+            "required": false
+          },
+          "ip4_address": {
+            "type": "string",
+            "description": "The IPv4 addresses associated with the host record",
+            "name": "ip4_address",
+            "required": false
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The TTL of the host record",
+            "name": "ttl",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the host record",
+            "default": "attribute=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/host_records_patch"
+            }
+          }
+        }
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/",
+          "/host_records/{absolute_name}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/host_records/{absolute_name}/": {
+            "absolute_name": {
+              "in": "path",
+              "description": "The FQDN of the record",
+              "name": "absolute_name",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "hint": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/hint/{host_hint}/",
+          "/configurations/{configuration}/views/{view}/zones/hint/{hint}/",
+          "/host_records/hint/{host_hint}/",
+          "/zones/hint/{hint}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/hint/{host_hint}/": {
+            "host_hint": {
+              "name": "host_hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/hint/{hint}/": {
+            "hint": {
+              "name": "hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/host_records/hint/{host_hint}/": {
+            "host_hint": {
+              "name": "host_hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/hint/{hint}/": {
+            "hint": {
+              "name": "hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/host_records/hint/{host_hint}/",
+          "/configurations/{configuration}/views/{view}/zones/hint/{hint}/",
+          "/host_records/hint/{host_hint}/",
+          "/zones/hint/{hint}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/host_records/hint/{host_hint}/": {
+            "host_hint": {
+              "name": "host_hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/hint/{hint}/": {
+            "hint": {
+              "name": "hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/host_records/hint/{host_hint}/": {
+            "host_hint": {
+              "name": "host_hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/hint/{hint}/": {
+            "hint": {
+              "name": "hint",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "zones": {
+      "parameters": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/zones/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/",
+          "/views/{view}/zones/",
+          "/zones/",
+          "/zones/{zone}/",
+          "/zones/{zone}/zones/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/views/{view}/zones/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/": {},
+          "/zones/{zone}/": {
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "post": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/zones/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/",
+          "/views/{view}/zones/",
+          "/zones/",
+          "/zones/{zone}/zones/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/views/{view}/zones/": {
+            "view": {
+              "name": "view",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/": {},
+          "/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {
+          "name": {
+            "type": "string",
+            "description": "The name of the entity.",
+            "name": "name",
+            "required": false
+          },
+          "properties": {
+            "type": "string",
+            "description": "The properties of the entity in the following format:key=value|key=value|",
+            "name": "properties",
+            "required": false
+          },
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/zones"
+            }
+          }
+        }
+      },
+      "get": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/zones/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/",
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/",
+          "/zones/",
+          "/zones/{zone}/",
+          "/zones/{zone}/zones/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/configurations/{configuration}/views/{view}/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          },
+          "/zones/": {},
+          "/zones/{zone}/": {
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/zones/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "delete": {
+        "paths": [
+          "/configurations/{configuration}/views/{view}/zones/{zone}/",
+          "/zones/{zone}/"
+        ],
+        "path_parameters": {
+          "/configurations/{configuration}/views/{view}/zones/{zone}/": {
+            "configuration": {
+              "in": "path",
+              "description": "The name of the Configuration",
+              "name": "configuration",
+              "type": "string",
+              "required": true
+            },
+            "view": {
+              "in": "path",
+              "description": "View name",
+              "name": "view",
+              "type": "string",
+              "required": true
+            },
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "/zones/{zone}/": {
+            "zone": {
+              "in": "path",
+              "description": "Recursive Zone name and subzone name",
+              "name": "zone",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "ddi": {
+      "get": {
+        "paths": [
+          "/ddi/"
+        ],
+        "path_parameters": {
+          "/ddi/": {}
+        },
+        "query_parameters": {}
+      }
+    },
+    "device_type": {
+      "post": {
+        "paths": [
+          "/device_type/"
+        ],
+        "path_parameters": {
+          "/device_type/": {}
+        },
+        "query_parameters": {
+          "payload": {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/entities"
+            }
+          }
+        }
+      }
+    },
+    "name": {
+      "parameters": {
+        "paths": [
+          "/device_type/name/{name}/"
+        ],
+        "path_parameters": {
+          "/device_type/name/{name}/": {
+            "name": {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "delete": {
+        "paths": [
+          "/device_type/name/{name}/"
+        ],
+        "path_parameters": {
+          "/device_type/name/{name}/": {
+            "name": {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    },
+    "gateway_api_json": {
+      "get": {
+        "paths": [
+          "/gateway_api_json/"
+        ],
+        "path_parameters": {
+          "/gateway_api_json/": {}
+        },
+        "query_parameters": {}
+      }
+    },
+    "search": {
+      "parameters": {
+        "paths": [
+          "/search_pattern/{search_pattern}/object_type/{object_type}/search/{search_filters}/"
+        ],
+        "path_parameters": {
+          "/search_pattern/{search_pattern}/object_type/{object_type}/search/{search_filters}/": {
+            "search_pattern": {
+              "name": "search_pattern",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "object_type": {
+              "name": "object_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "search_filters": {
+              "name": "search_filters",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      },
+      "get": {
+        "paths": [
+          "/search_pattern/{search_pattern}/object_type/{object_type}/search/{search_filters}/"
+        ],
+        "path_parameters": {
+          "/search_pattern/{search_pattern}/object_type/{object_type}/search/{search_filters}/": {
+            "search_pattern": {
+              "name": "search_pattern",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "object_type": {
+              "name": "object_type",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            "search_filters": {
+              "name": "search_filters",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "query_parameters": {}
+      }
+    }
+  },
+  "parameters": {
+    "absolute_name": {
+      "in": "path",
+      "description": "The FQDN of the record",
+      "name": "absolute_name",
+      "required": true,
+      "type": "string"
+    },
+    "configuration": {
+      "in": "path",
+      "description": "The name of the Configuration",
+      "name": "configuration",
+      "type": "string"
+    },
+    "view": {
+      "in": "path",
+      "description": "View name",
+      "name": "view",
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the alias record",
+      "name": "name",
+      "required": false
+    },
+    "linked_record": {
+      "type": "string",
+      "description": "The name of the record to which this alias will link",
+      "name": "linked_record",
+      "required": false
+    },
+    "ttl": {
+      "type": "integer",
+      "description": "The TTL of the CName record",
+      "name": "ttl",
+      "required": false
+    },
+    "properties": {
+      "type": "string",
+      "description": "The properties of the CName record",
+      "default": "attribute=value|",
+      "name": "properties",
+      "required": false
+    },
+    "payload": {
+      "name": "payload",
+      "required": true,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/cname_records_patch"
+      }
+    },
+    "value": {
+      "type": "string",
+      "description": "Comma separated values to assign to the Deployment Option",
+      "name": "value",
+      "required": true
+    },
+    "device_name": {
+      "name": "device_name",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "device_type": {
+      "name": "device_type",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "ipv4_address": {
+      "name": "ipv4_address",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "mac_address": {
+      "type": "string",
+      "description": "MAC Address value",
+      "name": "mac_address",
+      "required": false
+    },
+    "hostinfo": {
+      "type": "string",
+      "description": "A string containing host information for the address in the following format: hostname,viewId,reverseFlag,sameAsZoneFlag",
+      "name": "hostinfo",
+      "required": false
+    },
+    "action": {
+      "type": "string",
+      "description": "Desired IP4 address state: MAKE_STATIC / MAKE_RESERVED / MAKE_DHCP_RESERVED",
+      "name": "action",
+      "required": false
+    },
+    "block": {
+      "in": "path",
+      "description": "Recursive",
+      "name": "block",
+      "required": true,
+      "type": "string"
+    },
+    "cidr": {
+      "type": "string",
+      "description": "The CIDR notation for the network",
+      "name": "cidr",
+      "required": true
+    },
+    "server_fqdn": {
+      "type": "string",
+      "description": "Name of the server interface the role will be assigned to",
+      "name": "server_fqdn",
+      "required": true
+    },
+    "role_type": {
+      "type": "string",
+      "description": "Type of Deployment Role to assign (dns or dhcp)",
+      "name": "role_type",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "description": "Role to assign (master, slave, etc.",
+      "name": "role",
+      "required": true
+    },
+    "secondary_fqdn": {
+      "type": "string",
+      "description": "Name of secondary server interface, if using DHCP Failover",
+      "name": "secondary_fqdn",
+      "required": false
+    },
+    "option_name": {
+      "name": "option_name",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "server_id": {
+      "name": "server_id",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "network": {
+      "name": "network",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "server_name": {
+      "name": "server_name",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "replace": {
+      "type": "string",
+      "description": "Boolean value to determine if the server will be replaced",
+      "name": "replace",
+      "required": false
+    },
+    "tag_group": {
+      "name": "tag_group",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "tag": {
+      "name": "tag",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "ip4_address": {
+      "type": "string",
+      "description": "The IPv4 addresses associated with the host record",
+      "name": "ip4_address",
+      "required": false
+    },
+    "host_hint": {
+      "name": "host_hint",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "zone": {
+      "in": "path",
+      "description": "Recursive Zone name and subzone name",
+      "name": "zone",
+      "type": "string"
+    },
+    "hint": {
+      "name": "hint",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "search_pattern": {
+      "name": "search_pattern",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "object_type": {
+      "name": "object_type",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    },
+    "search_filters": {
+      "name": "search_filters",
+      "in": "path",
+      "required": true,
+      "type": "string"
+    }
+  }
+}

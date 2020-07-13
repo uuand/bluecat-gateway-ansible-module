@@ -30,26 +30,67 @@
     #     var: result.json[1].name
 
     # #http://10.16.195.136/api/v1/configurations/DE-MCC/views/internal/zones/com/zones/metro-cc/zones/
-    - name: get one Zone
+    # - name: get one Zone
+    #   bluecat:
+    #     username: "{{ username }}"
+    #     password: "{{ password }}"
+    #     protocol: "{{ protocol }}"
+    #     domain: "{{ domain }}"
+    #     version: "{{ version }}"
+    #     resource: zones 
+    #     action: get
+    #     resource_path:
+    #       - configuration: "DE-MCC"
+    #       - view: "external"
+    #       - zone: "bluecat.metro-cc.com"
+    #   register: result
+    #   delegate_to: localhost
+
+    # - name: debug one Zone
+    #   debug:
+    #     var: result
+
+    - name: get one Server
       bluecat:
         username: "{{ username }}"
         password: "{{ password }}"
         protocol: "{{ protocol }}"
         domain: "{{ domain }}"
         version: "{{ version }}"
-        resource: zones 
+        resource: servers 
         action: get
         resource_path:
           - configuration: "DE-MCC"
-          - view: "external"
-          - zone: "bluecat.metro-cc.com"
+          - server_name: "storenode2.bluecat.metro-cc.com"
       register: result
       delegate_to: localhost
 
-    - name: debug one Zone
+    - name: debug one Server
       debug:
         var: result
 
+    - name: create one Server
+      bluecat:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        protocol: "{{ protocol }}"
+        domain: "{{ domain }}"
+        version: "{{ version }}"
+        resource: servers 
+        action: post
+        json_data:
+          fqdn: "storenode3.bluecat.metro-cc.com"
+          friendly_name: "storenode3"
+          profile: "ADONIS_XMB2"
+          interface_address: "10.192.5.150"
+        resource_path:
+          - configuration: "DE-MCC"
+      register: result
+      delegate_to: localhost
+
+    - name: debug one Server
+      debug:
+        var: result
 #     - name: create one Zone
 #       bluecat:
 #         username: "{{ username }}"
